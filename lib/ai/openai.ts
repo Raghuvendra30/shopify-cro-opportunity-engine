@@ -1,5 +1,4 @@
-import OpenAI from "openai";
-
+import { getOpenAIClient } from "./openai";
 let client: OpenAI | null = null;
 
 export function getOpenAIClient() {
