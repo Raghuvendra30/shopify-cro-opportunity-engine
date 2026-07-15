@@ -1,28 +1,22 @@
-import client from "./openai";
+import { getOpenAIClient } from "./openai";
 
 export async function generateExperiment(
-title:string,
-description:string
-){
+  title: string,
+  description: string
+) {
+  const client = getOpenAIClient();
 
-const response =
-await client.chat.completions.create({
+  const response = await client.chat.completions.create({
+    model: "gpt-4.1",
 
-model:"gpt-4.1",
-
-messages:[
-{
-role:"system",
-
-content:
-"Generate an A/B testing experiment."
-},
-{
-role:"user",
-
-content:
-
-`
+    messages: [
+      {
+        role: "system",
+        content: "Generate an A/B testing experiment.",
+      },
+      {
+        role: "user",
+        content: `
 Title
 
 ${title}
@@ -30,14 +24,10 @@ ${title}
 Description
 
 ${description}
+`,
+      },
+    ],
+  });
 
-`
-}
-]
-});
-
-return response
-.choices[0]
-.message.content;
-
+  return response.choices[0].message.content;
 }
