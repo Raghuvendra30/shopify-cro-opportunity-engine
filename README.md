@@ -380,7 +380,7 @@ https://github.com/Raghuvendra30
 
 LinkedIn
 
-(Add your LinkedIn URL)
+https://www.linkedin.com/in/raghuvendrapratapsingh30/
 
 ---
 
