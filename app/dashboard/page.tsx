@@ -26,19 +26,22 @@ export default function DashboardPage() {
 
     if (!url) return;
 
+    // TypeScript now knows this is a string
+    const currentUrl = url;
+
     async function runAnalysis() {
       try {
         console.log("Calling analyzeStore...");
 
         setLoading(true);
 
-        const analysis = await analyzeStore(url);
+        const analysis = await analyzeStore(currentUrl);
 
         console.log("Analysis result:", analysis);
 
         setResult(analysis);
       } catch (error) {
-          console.error(error);
+        console.error(error);
 
         alert(
           error instanceof Error
