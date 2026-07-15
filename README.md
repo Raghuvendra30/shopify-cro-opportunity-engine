@@ -1,36 +1,387 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Shopify CRO Opportunity Engine
 
-## Getting Started
+<p align="center">
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38BDF8?logo=tailwindcss)
+![Playwright](https://img.shields.io/badge/Playwright-Web%20Scraping-45BA63?logo=playwright)
+![OpenAI](https://img.shields.io/badge/OpenAI-AI-412991?logo=openai)
+
+</p>
+
+<p align="center">
+
+AI-powered Shopify Conversion Rate Optimization (CRO) platform that audits Shopify stores using Playwright, scores them across multiple CRO dimensions, and generates actionable optimization recommendations.
+
+</p>
+
+---
+
+# 🌐 Live Demo
+
+Frontend
+
+> Coming Soon
+
+Backend API
+
+> Coming Soon
+
+---
+
+# 📸 Screenshots
+
+## Landing Page
+
+![Landing](assets/screenshots/landing.png)
+
+---
+
+## Dashboard
+
+![Dashboard](assets/screenshots/dashboard.png)
+
+---
+
+## Radar Chart
+
+![Radar](assets/screenshots/radar-chart.png)
+
+---
+
+## CRO Opportunities
+
+![Opportunities](assets/screenshots/opportunities.png)
+
+---
+
+## Executive Summary
+
+![Summary](assets/screenshots/summary.png)
+
+---
+
+# ✨ Features
+
+## Website Analysis
+
+- Shopify Store Analysis
+- Automatic Homepage Extraction
+- Collection Detection
+- Product Extraction
+- Cart Analysis
+- CTA Detection
+- Trust Badge Detection
+- Shipping Information Detection
+- Review Detection
+
+---
+
+## Scoring Engine
+
+Evaluates stores using five categories:
+
+- UX
+- SEO
+- Trust
+- Accessibility
+- Merchandising
+
+Calculates
+
+- Individual Scores
+- Overall CRO Score
+- Evidence-based reasoning
+
+---
+
+## Dashboard
+
+- Modern SaaS Dashboard
+- Overall Score
+- Individual Category Scores
+- Animated Progress Bars
+- Radar Chart
+- Store Information
+- Product Table
+- Scraped Evidence
+- Executive Summary
+
+---
+
+## AI Features
+
+- Executive Summary
+- CRO Audit
+- Experiment Generator
+- AI Recommendations
+
+---
+
+## Export
+
+- Print Friendly Report
+- PDF Export
+
+---
+
+# 🏗 Architecture
+
+```
+                User
+
+                  │
+
+                  ▼
+
+         Next.js Dashboard
+
+                  │
+
+                  ▼
+
+         API Routes (REST)
+
+                  │
+
+                  ▼
+
+      Playwright Scraper Engine
+
+                  │
+
+                  ▼
+
+          Shopify Website
+
+                  │
+
+                  ▼
+
+          Scoring Engine
+
+                  │
+
+                  ▼
+
+           AI Audit Engine
+
+                  │
+
+                  ▼
+
+          Dashboard Report
+```
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- Next.js 16
+- React
+- TypeScript
+- TailwindCSS
+- Recharts
+
+---
+
+## Backend
+
+- Node.js
+- Next.js API Routes
+- Playwright
+
+---
+
+## AI
+
+- OpenAI API
+
+---
+
+## Charts
+
+- Recharts
+
+---
+
+## Deployment
+
+- Vercel
+- Railway
+
+---
+
+# 📂 Project Structure
+
+```
+app/
+components/
+hooks/
+lib/
+services/
+types/
+tests/
+docs/
+assets/
+public/
+```
+
+---
+
+# 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Raghuvendra30/shopify-cro-opportunity-engine.git
+```
+
+Move into the project
+
+```bash
+cd shopify-cro-opportunity-engine
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Create environment variables
+
+```env
+OPENAI_API_KEY=YOUR_KEY
+```
+
+Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# ⚙ Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+```env
+OPENAI_API_KEY=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NEXT_PUBLIC_API_URL=
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# 📊 Scoring Categories
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Category | Description |
+|----------|-------------|
+| UX | Navigation, CTA, Layout |
+| SEO | Metadata, Structure |
+| Trust | Reviews, Trust Badges |
+| Accessibility | Content & Usability |
+| Merchandising | Product Presentation |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# 📈 Workflow
+
+```
+Store URL
+
+↓
+
+Playwright Scraper
+
+↓
+
+Structured Store Data
+
+↓
+
+Scoring Engine
+
+↓
+
+AI Audit
+
+↓
+
+Dashboard
+
+↓
+
+Recommendations
+```
+
+---
+
+# 📄 API Routes
+
+| Endpoint | Method |
+|----------|--------|
+| /api/analyze | POST |
+| /api/scrape | POST |
+| /api/score | POST |
+| /api/experiment | POST |
+
+---
+
+# 🧪 Future Improvements
+
+- Authentication
+- Database
+- Audit History
+- Multi-store Comparison
+- Scheduled Audits
+- Email Reports
+- AI Chat Assistant
+- Lighthouse Integration
+- Screenshot Analysis
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Fork the repository and submit a Pull Request.
+
+---
+
+# 📜 License
+
+MIT License
+
+---
+
+# 👨‍💻 Author
+
+**Raghuvendra Pratap Singh**
+
+B.Tech Information Technology
+
+Amity University
+
+GitHub
+
+https://github.com/Raghuvendra30
+
+LinkedIn
+
+(Add your LinkedIn URL)
+
+---
+
+⭐ If you found this project useful, consider giving it a star!
