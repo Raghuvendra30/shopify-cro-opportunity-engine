@@ -1,4 +1,4 @@
-import client from "./openai";
+import { getOpenAIClient } from "./openai";
 import { SYSTEM_PROMPT } from "./prompt";
 
 import type { StoreData } from "@/lib/scraper/types";
@@ -8,6 +8,7 @@ export async function generateAIAudit(
   store: StoreData,
   scores: ScoreBreakdown
 ) {
+  const client = getOpenAIClient();
 
   const prompt = `
 Homepage
@@ -30,31 +31,25 @@ Merchandising ${scores.merchandising.score}
 
 Products
 
-${JSON.stringify(store.products,null,2)}
-
+${JSON.stringify(store.products, null, 2)}
 `;
 
-  const response =
-    await client.chat.completions.create({
+  const response = await client.chat.completions.create({
+    model: "gpt-4.1",
 
-      model:"gpt-4.1",
+    temperature: 0.4,
 
-      temperature:0.4,
+    messages: [
+      {
+        role: "system",
+        content: SYSTEM_PROMPT,
+      },
+      {
+        role: "user",
+        content: prompt,
+      },
+    ],
+  });
 
-      messages:[
-        {
-          role:"system",
-          content:SYSTEM_PROMPT
-        },
-        {
-          role:"user",
-          content:prompt
-        }
-      ]
-    });
-
-  return response
-    .choices[0]
-    .message
-    .content;
+  return response.choices[0].message.content;
 }
