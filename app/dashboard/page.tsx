@@ -22,38 +22,24 @@ export default function DashboardPage() {
     useState<AnalysisResult | null>(null);
 
   useEffect(() => {
-    console.log("Dashboard URL:", url);
+    if (typeof url !== "string") {
+      return;
+    }
 
-    if (!url) return;
-
-    // TypeScript now knows this is a string
-    const currentUrl = url;
-
-    async function runAnalysis() {
+    async function runAnalysis(storeUrl: string) {
       try {
-        console.log("Calling analyzeStore...");
-
         setLoading(true);
 
-        const analysis = await analyzeStore(currentUrl);
-
-        console.log("Analysis result:", analysis);
+        const analysis = await analyzeStore(storeUrl);
 
         setResult(analysis);
       } catch (error) {
         console.error(error);
-
-        alert(
-          error instanceof Error
-            ? error.message
-            : "Analysis failed."
-        );
       } finally {
         setLoading(false);
       }
     }
-
-    runAnalysis();
+    runAnalysis(url);
   }, [url]);
 
   if (!url) {
