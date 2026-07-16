@@ -23,11 +23,11 @@ AI-powered Shopify Conversion Rate Optimization (CRO) platform that audits Shopi
 
 Frontend
 
-> Coming Soon
+https://shopify-cro-opportunity-engine-theta.vercel.app/
 
 Backend API
 
-> Coming Soon
+https://shopify-cro-opportunity-engine-production.up.railway.app
 
 ---
 
